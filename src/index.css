@@ -103,12 +103,12 @@ svg {
   background-size: 920px 920px;
   background-position: center top;
 
-  opacity: 0.43;
+  opacity: 0.32;
 
   filter:
-    blur(0.3px)
-    contrast(0.9)
-    brightness(0.84);
+    blur(0.55px)
+    contrast(0.82)
+    brightness(0.76);
 
   transform: scale(1.015);
 }
@@ -125,8 +125,8 @@ svg {
 
   background:
     linear-gradient(
-      rgba(12, 6, 11, 0.38),
-      rgba(12, 6, 11, 0.46)
+      rgba(12, 6, 11, 0.48),
+      rgba(12, 6, 11, 0.57)
     ),
     radial-gradient(
       circle at 80% 10%,
@@ -849,6 +849,7 @@ svg {
   height: 590px;
 
   position: relative;
+
   overflow: hidden;
 
   border-radius:
@@ -858,7 +859,12 @@ svg {
   border: 1px solid var(--border-strong);
 
   box-shadow:
-    0 40px 100px rgba(0, 0, 0, 0.43);
+    0 40px 100px rgba(
+      0,
+      0,
+      0,
+      0.43
+    );
 
   transition:
     border-radius 0.7s ease,
@@ -1523,7 +1529,7 @@ svg {
 }
 
 /* ========================
-   PORTFÓLIO
+   PORTFÓLIO SEM LUA/CÍRCULO
 ======================== */
 
 .portfolio-section {
@@ -1537,15 +1543,14 @@ svg {
 
   margin: 30px auto;
 
-  padding: 64px 76px;
+  padding: 75px;
 
   display: grid;
 
   grid-template-columns:
-    minmax(280px, 0.72fr)
-    minmax(440px, 1.28fr);
+    0.55fr 1fr;
 
-  gap: 88px;
+  gap: 90px;
 
   align-items: center;
 
@@ -1554,81 +1559,103 @@ svg {
   background:
     linear-gradient(
       120deg,
-      rgba(72, 42, 69, 0.34),
-      rgba(14, 7, 13, 0.44)
+      rgba(72, 42, 69, 0.38),
+      rgba(14, 7, 13, 0.48)
     );
 
   backdrop-filter: blur(8px);
+}
+
+.portfolio-accent {
+  min-height: 315px;
+
+  padding: 35px;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 20px;
+
+  border:
+    1px solid
+    var(--border-strong);
+
+  background:
+    linear-gradient(
+      150deg,
+      rgba(112, 80, 111, 0.25),
+      rgba(27, 13, 25, 0.38)
+    );
+
+  position: relative;
 
   overflow: hidden;
 }
 
-.portfolio-art {
-  min-height: 360px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-}
-
-.portfolio-art::before {
+.portfolio-accent::before {
   content: "";
 
   position: absolute;
 
-  width: 72%;
-  height: 72%;
+  width: 160px;
+  height: 160%;
 
-  border-radius: 50%;
+  top: -30%;
+  right: 12%;
+
+  transform: rotate(24deg);
 
   background:
-    rgba(135, 104, 140, 0.1);
-
-  filter: blur(70px);
-
-  pointer-events: none;
+    linear-gradient(
+      transparent,
+      rgba(195, 166, 196, 0.08),
+      transparent
+    );
 }
 
-.portfolio-art img {
-  width: min(100%, 390px);
-  max-height: 420px;
+.portfolio-accent > span {
+  color: var(--gold);
 
-  object-fit: contain;
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 130px;
+
+  line-height: 0.7;
+
+  opacity: 0.84;
+}
+
+.portfolio-accent > div {
+  display: flex;
+  flex-direction: column;
 
   position: relative;
-  z-index: 1;
 
-  filter:
-    drop-shadow(
-      0 25px 45px
-      rgba(0, 0, 0, 0.3)
-    );
-
-  transition:
-    transform 0.5s
-    cubic-bezier(
-      0.16,
-      1,
-      0.3,
-      1
-    ),
-    filter 0.45s ease;
+  z-index: 2;
 }
 
-.portfolio-section:hover
-.portfolio-art img {
-  transform:
-    translateY(-7px)
-    rotate(-1.5deg)
-    scale(1.025);
+.portfolio-accent small {
+  color: var(--muted);
 
-  filter:
-    drop-shadow(
-      0 35px 55px
-      rgba(0, 0, 0, 0.38)
-    );
+  font-size: 7px;
+
+  letter-spacing: 0.22em;
+}
+
+.portfolio-accent strong {
+  margin-top: 5px;
+
+  color: var(--purple-pale);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+
+  font-weight: 500;
 }
 
 .portfolio-copy {
@@ -1682,7 +1709,6 @@ svg {
 
   line-height: 1.8;
 }
-
 
 /* ========================
    CTA
@@ -2028,13 +2054,8 @@ svg {
     padding: 60px;
   }
 
-  .portfolio-art {
-    max-width: 620px;
-    min-height: 300px;
-  }
-
-  .portfolio-art img {
-    width: min(100%, 330px);
+  .portfolio-accent {
+    max-width: 650px;
   }
 }
 
@@ -2043,26 +2064,6 @@ svg {
 ======================== */
 
 @media (max-width: 700px) {
-  .site::before {
-    background-size:
-      620px 620px;
-
-    opacity: 0.34;
-
-    filter:
-      blur(0.5px)
-      contrast(0.84)
-      brightness(0.76);
-  }
-
-  .site::after {
-    background:
-      linear-gradient(
-        rgba(11, 5, 10, 0.57),
-        rgba(11, 5, 10, 0.64)
-      );
-  }
-
   .header,
   .section,
   .hero,
@@ -2429,29 +2430,30 @@ svg {
 
     margin-top: 0;
 
-    padding: 38px 21px 50px;
+    padding: 27px 21px 45px;
 
     display: flex;
     flex-direction: column;
 
-    gap: 22px;
+    gap: 36px;
   }
 
-  .portfolio-art {
+  .portfolio-accent {
     width: 100%;
 
-    min-height: 235px;
+    min-height: 150px;
 
-    order: 1;
+    padding: 22px;
+
+    align-items: flex-end;
   }
 
-  .portfolio-art img {
-    width: min(82vw, 255px);
-    max-height: 280px;
+  .portfolio-accent > span {
+    font-size: 84px;
   }
 
-  .portfolio-copy {
-    order: 2;
+  .portfolio-accent strong {
+    font-size: 20px;
   }
 
   .portfolio-copy h2 {

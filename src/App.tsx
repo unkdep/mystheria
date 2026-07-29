@@ -43,7 +43,7 @@ const INSTAGRAM_URL =
 const TIKTOK_URL =
   "https://www.tiktok.com/@mystheria.oraculos"
 
-const PORTFOLIO_URL = "/portfolio-mystheria.pdf"
+const PORTFOLIO_URL = "https://www.canva.com/design/DAG_oWSi8QQ/VP3D8FeylSkkXWAR1aGBow/view?utm_content=DAG_oWSi8QQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h02ebd674ea#2"
 
 const services: Service[] = [
   {
@@ -275,7 +275,9 @@ function App() {
           <a href="#sobre">Sobre</a>
           <a href="#leituras">Leituras</a>
 
-          <a href={PORTFOLIO_URL} download>
+          <a href={PORTFOLIO_URL}
+            target="_blank"
+            rel="noopener noreferrer">
             Portfólio
           </a>
 
@@ -379,7 +381,8 @@ function App() {
 
           <a
             href={PORTFOLIO_URL}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeMenu}
           >
             <span>Portfólio</span>
@@ -467,7 +470,8 @@ function App() {
 
               <a
                 href={PORTFOLIO_URL}
-                download
+            target="_blank"
+            rel="noopener noreferrer"
                 className="portfolio-button"
               >
                 <Download size={16} />
@@ -540,7 +544,8 @@ function App() {
 
                 <a
                   href={PORTFOLIO_URL}
-                  download
+            target="_blank"
+            rel="noopener noreferrer"
                 >
                   <Download size={17} />
                   PORTFÓLIO
@@ -709,17 +714,10 @@ function App() {
           </div>
         </section>
 
-        {/* PORTFÓLIO */}
+        {/* PORTFÓLIO SEM IMAGEM */}
 
         <section className="portfolio-section">
-          <div className="portfolio-art">
-            <img
-              src="/cartas.png"
-              alt="Ilustração de uma mão segurando cartas de tarot"
-            />
-          </div>
-
-          <div className="portfolio-copy">
+          <div className="portfolio-copy portfolio-copy-centered">
             <span>
               Portfólio Mystheria
             </span>
@@ -732,16 +730,18 @@ function App() {
 
             <p>
               No portfólio você encontra mais
-              informações sobre métodos e propostas.
+              informações sobre métodos, propostas e
+              possibilidades de leitura.
             </p>
 
             <a
               href={PORTFOLIO_URL}
-              download
+            target="_blank"
+            rel="noopener noreferrer"
               className="primary-button"
             >
               <Download size={18} />
-              BAIXAR PORTFÓLIO
+              VER PORTFÓLIO
             </a>
           </div>
         </section>
@@ -888,8 +888,9 @@ function App() {
 
           <a
             href={PORTFOLIO_URL}
-            download
-            aria-label="Baixar portfólio"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver portfólio"
           >
             <Download />
           </a>
